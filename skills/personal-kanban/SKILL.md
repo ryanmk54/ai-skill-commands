@@ -94,6 +94,7 @@ When adding or updating chat references:
 
 - Update the companion file under `chats/logs/` first (or create it and set `chat_log_path` on the task). Full per-chat structure is defined in `CHAT_LOG_GUIDE.md`.
 - Do not add a “Related chats” list under the task `## Notes` by default; the task should point at the companion log unless the user explicitly asks for inline chat bullets.
+- If the task body includes a Markdown link to that companion log, use a Cursor **repo-relative** target with a **leading slash** from the workspace root (for example `[companion log](/chats/logs/2026-04-15-task-title.md)`). A leading `/` resolves from repo root; omitting it makes the path relative to the task file; links that look like absolute filesystem paths (for example `/home/...`) can resolve incorrectly in Cursor.
 
 Suggested export folder format:
 
@@ -242,6 +243,6 @@ Apply this skill for requests like:
 - Ask for the board root if local configuration is missing.
 - Treat the directory layout as stable unless the user changes it.
 - Favor concise task files over elaborate project-management metadata.
-- For chat tracking, follow `CHAT_LOG_GUIDE.md`: companion log first; task file gets `chat_log_path` (and a one-line pointer in body if useful), not duplicated chat lists unless requested.
+- For chat tracking, follow `CHAT_LOG_GUIDE.md`: companion log first; task file gets `chat_log_path` (and a one-line pointer in body if useful), not duplicated chat lists unless requested. For Markdown links in the task body, prefer repo-relative paths with a leading `/` (for example `/chats/logs/...`).
 - `worktree_path` can be important context in multi-repo or multi-worktree setups, so include it in frontmatter when the user asks or when it is clearly relevant.
 - If the board lives under `/path/to/personal-kanban/tasks`, keep chat logs and exports in sibling `/path/to/personal-kanban/chats` folders, not inside the status folders.
