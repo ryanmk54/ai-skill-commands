@@ -5,6 +5,7 @@ Versioned source for a Cursor skill that manages a file-backed Kanban board back
 ## Contents
 
 - `SKILL.md`: the skill definition loaded by Cursor
+- `CHAT_LOG_GUIDE.md`: canonical companion chat log format and chat-reference workflow (edit here when changing chat tracking behavior)
 - `CHANGELOG.md`: release notes for skill changes
 - `LOCAL_CONFIG.example.md`: sample local configuration for the board root
 - `scripts/install.sh`: installs the skill symlink and bootstraps local config

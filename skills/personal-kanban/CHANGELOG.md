@@ -2,6 +2,17 @@
 
 All notable changes to this skill will be documented in this file.
 
+## [1.2.3] - 2026-04-20
+
+### Added
+
+- `CHAT_LOG_GUIDE.md`: canonical companion chat log format and “update log first” workflow for chat references
+- Cursor commands: `add-chat-reference`, `retrieve-chat-codex53`
+
+### Changed
+
+- `SKILL.md`: companion chat tracking explicitly prefers updating `chats/logs` before duplicating chat lists in task files
+
 ## [1.2.2] - 2026-04-16
 
 ### Changed

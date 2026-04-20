@@ -5,7 +5,7 @@ description: Manage a file-backed Kanban board stored as Markdown files in statu
 
 # Personal Kanban
 
-Version: 1.2.2
+Version: 1.2.3
 
 ## Purpose
 
@@ -89,6 +89,11 @@ Guidelines:
 - Keep exported chat transcripts under `chats/exports/YYYY-MM-month-name/`.
 - Prefer stable transcript IDs for export filenames.
 - Keep only a pointer such as `chat_log_path` in the task file unless the user explicitly wants more detail in the task itself.
+
+When adding or updating chat references:
+
+- Update the companion file under `chats/logs/` first (or create it and set `chat_log_path` on the task). Full per-chat structure is defined in `CHAT_LOG_GUIDE.md`.
+- Do not add a “Related chats” list under the task `## Notes` by default; the task should point at the companion log unless the user explicitly asks for inline chat bullets.
 
 Suggested export folder format:
 
@@ -237,5 +242,6 @@ Apply this skill for requests like:
 - Ask for the board root if local configuration is missing.
 - Treat the directory layout as stable unless the user changes it.
 - Favor concise task files over elaborate project-management metadata.
+- For chat tracking, follow `CHAT_LOG_GUIDE.md`: companion log first; task file gets `chat_log_path` (and a one-line pointer in body if useful), not duplicated chat lists unless requested.
 - `worktree_path` can be important context in multi-repo or multi-worktree setups, so include it in frontmatter when the user asks or when it is clearly relevant.
 - If the board lives under `/path/to/personal-kanban/tasks`, keep chat logs and exports in sibling `/path/to/personal-kanban/chats` folders, not inside the status folders.
